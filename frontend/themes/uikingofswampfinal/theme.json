@@ -1,0 +1,9 @@
+{
+  "lumoImports" : [ "typography", "color", "spacing", "badge", "utility" ],
+  "assets" : {
+    "@fontsource/bona-nova" : {
+      "*.css" : "@fontsource/bona-nova",
+      "files/*" : "@fontsource/bona-nova/files"
+    }
+  }
+}

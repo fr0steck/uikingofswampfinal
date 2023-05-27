@@ -1,0 +1,7 @@
+@import url('./main-layout.css');
+@import url('./views/createplayers-view.css');
+@import url('./views/play-view.css');
+@import url('@fontsource/bona-nova/index.css');    html {
+--lumo-font-family: Bona Nova;
+
+    }
