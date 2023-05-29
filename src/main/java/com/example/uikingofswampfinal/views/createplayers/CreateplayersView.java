@@ -96,7 +96,7 @@ public class CreateplayersView extends Div implements BeforeEnterObserver {
 		
 		grid.setItems(query -> samplePlayerService.list(
 						PageRequest.of(query.getPage(), query.getPageSize(), VaadinSpringDataHelpers.toSpringDataSort(query)))
-				.stream());
+				.stream().filter(x->!x.getNickname().equals("Wieża")));
 		grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
 		
 		// when a row is selected or deselected, populate form
