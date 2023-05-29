@@ -109,6 +109,8 @@ public class CreateplayersView extends Div implements BeforeEnterObserver {
 			}
 		});
 		
+		
+		
 		// Configure Form
 		binder = new BeanValidationBinder<>(SamplePlayer.class);
 		

@@ -3,6 +3,7 @@ package com.example.uikingofswampfinal.views.fight;
 import com.example.uikingofswampfinal.data.entity.SamplePlayer;
 import com.example.uikingofswampfinal.data.service.SamplePlayerService;
 import com.example.uikingofswampfinal.views.MainLayout;
+import com.example.uikingofswampfinal.views.createplayers.CreateplayersView;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
@@ -15,8 +16,8 @@ import org.springframework.data.domain.Pageable;
 
 import java.math.BigDecimal;
 
-@PageTitle("Fight PVR")
-@Route(value = "fight-pve", layout = MainLayout.class)
+@PageTitle("Fight PVP")
+@Route(value = "fight-pvp", layout = MainLayout.class)
 public class PvPView extends Composite<VerticalLayout> {
 	private final ComboBox<SamplePlayer> playerA = new ComboBox<>("Attacking player.");
 	private final ComboBox<SamplePlayer> playerB = new ComboBox<>("Defending player.");
@@ -62,6 +63,9 @@ public class PvPView extends Composite<VerticalLayout> {
 			// Troops attack
 			int destroyedTroops = (int) Math.round(attack_point / HEALTH_OF_TROOPS);
 			new_defending_player_troops = defending_player_troops - destroyedTroops;
+			if (new_defending_player_troops < 0) {
+				new_defending_player_troops = 0;
+			}
 			Notification.show("Player:" + defending_player.getNickname()
 							+ ", lost troops: " +
 							destroyedTroops,
@@ -73,7 +77,7 @@ public class PvPView extends Composite<VerticalLayout> {
 			var hero_live_point = defending_player.getHealth().doubleValue();
 			var hero_defend_point = defending_player.getDefensepoints().doubleValue();
 			
-			new_hero_live_point = hero_live_point - (hero_defend_point - attack_point);
+			new_hero_live_point = hero_live_point - Math.abs(hero_defend_point - attack_point);
 			
 			if (new_hero_live_point <= 0) {
 				//Die

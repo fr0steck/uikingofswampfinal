@@ -56,7 +56,7 @@ public class MainLayout extends AppLayout {
 		nav.addItem(new AppNavItem("Create players", CreateplayersView.class, LineAwesomeIcon.COLUMNS_SOLID.create()));
 		nav.addItem(new AppNavItem("Occupations", OccupationView.class, LineAwesomeIcon.TH_LIST_SOLID.create()));
 		nav.addItem(new AppNavItem("Items", ItemView.class, LineAwesomeIcon.TH_LIST_SOLID.create()));
-		nav.addItem(new AppNavItem("PvE view", PvPView.class, LineAwesomeIcon.FLASK_SOLID.create()));
+		nav.addItem(new AppNavItem("PvP view", PvPView.class, LineAwesomeIcon.FLASK_SOLID.create()));
 		
 		return nav;
 	}

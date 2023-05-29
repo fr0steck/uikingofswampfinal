@@ -49,6 +49,8 @@ public class OccupationView extends Main implements HasComponents, HasStyle {
 				"https://i.ibb.co/c8nCJNN/Szaman.png"));
 		imageContainer.add(new OccupationViewCard("Zwiadowca",
 				"https://i.ibb.co/348YNs3/zwiadowca-karta.png"));
+		imageContainer.add(new OccupationViewCard("Rycerz",
+				"https://i.ibb.co/StzLkYt/rycerz-karta.png"));
 	}
 	
 	private void constructUI() {
