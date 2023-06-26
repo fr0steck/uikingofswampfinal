@@ -61,6 +61,11 @@ public class PvPView extends Composite<VerticalLayout> {
 		var playerA = this.playerA.getValue();
 		var playerB = this.playerB.getValue();
 
+		if (!playerA.getActive() || !playerB.getActive()) {
+			Notification.show("One or more players are not active. Fight cannot proceed.", 1000 * 10, Notification.Position.MIDDLE);
+			return;
+		}
+
 		var attackPointA = calculateAttackPoints(playerA);
 		var attackPointB = calculateAttackPoints(playerB);
 
